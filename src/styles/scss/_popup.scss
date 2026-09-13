@@ -1,0 +1,72 @@
+.popup {
+  transform: translateY(-112%);
+  opacity: 0;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  background-color: #fff;
+  padding: 50px;
+  padding-top: 70px;
+  border-radius: 10px;
+  background: linear-gradient(to top right, rgba(227, 242, 253, 1), rgba(255, 255, 255, 1));
+  z-index: 102;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &--open {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  @include respond(995) {
+    width: 80%;
+  }
+
+  @include respond(530) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.form__error-summary {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.form__error {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0 0 0;
+}
+
+.form__input.error {
+  border-color: red; /* Подсвечиваем поле с ошибкой */
+}
+.menu__close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.overlay-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+}
+
+.overlay-popup.active {
+    opacity: 10;
+    visibility: visible;
+}

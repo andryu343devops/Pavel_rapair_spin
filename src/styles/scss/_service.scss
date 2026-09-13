@@ -1,0 +1,48 @@
+.services__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 60px;
+  padding: 0;
+}
+
+.services__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 220px;
+  height: 223px;
+  padding: 20px 40px;
+  background-color: $service-item-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+
+  &--text {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  &--img{
+    text-align: center;
+  }
+}
+
+.services__info {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include respond(530) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.services {
+  background: #f9f9f9;
+}

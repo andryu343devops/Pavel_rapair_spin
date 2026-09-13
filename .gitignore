@@ -1,0 +1,72 @@
+# Папка зависимостей
+.next/
+node_modules/
+
+# Логи
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Сторонние инструменты
+.DS_Store               # macOS системные файлы
+Thumbs.db               # Windows системные файлы
+*.swp                   # Vim swap файлы
+*.swo
+
+# Build-папки
+build/
+dist/
+out/
+
+# Бандлы
+*.bundle.js
+*.bundle.js.map
+
+# Транспиляция и временные файлы
+*.tsbuildinfo           # TypeScript кеш
+*.cache/
+*.tmp/
+
+# Конфигурационные файлы окружения
+.env                    # Переменные окружения
+.env.*                  # Переменные для разных сред (например, .env.production)
+.secret                 # Секреты
+
+# Тестовые файлы
+coverage/               # Результаты тестов coverage (например, Jest)
+*.lcov
+
+# IDE и редакторы
+.idea/                  # WebStorm/IntelliJ IDEA
+.vscode/                # Настройки Visual Studio Code
+*.code-workspace
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Lock-файлы других менеджеров пакетов
+yarn.lock               # Если используете npm
+pnpm-lock.yaml          # Если используете npm/yarn
+package-lock.json       # Если используете yarn/pnpm
+
+# Git hooks
+.husky/
+
+# Логи Git
+*.orig
+*.rej
+
+# CI/CD файлы
+.npmrc                  # Настройки npm
+# *.env.local
+*.env.development.local
+*.env.production.local
+
+# Кастомные исключения
+custom-folder/          # Любая кастомная папка, которую не нужно добавлять
+my-script-output/
+.vercel

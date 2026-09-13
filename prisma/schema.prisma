@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  password     String
+  resetToken   String?  @unique
+  resetTokenExpires DateTime?
+  createdAt    DateTime @default(now())
+
+  appointment  Appointment?
+  testimonials Testimonial?
+  blogPosts    BlogPost[]
+}
+
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  userId    Int?     @unique
+  user      User?    @relation(fields: [userId], references: [id])
+  userName  String?
+  message   String
+  rating    Int      @default(5)
+  createdAt DateTime @default(now())
+}
+
+model Appointment {
+  id             Int           @id @default(autoincrement())
+  userId         Int           @unique
+  address         String?
+  availabilityId Int           @unique
+  notes          String?
+  createdAt      DateTime      @default(now())
+
+  // ✅ Связь с пользователем
+  user         User         @relation(fields: [userId], references: [id])
+
+  // ✅ Связь с `Availability`
+  availability Availability @relation(fields: [availabilityId], references: [id])
+}
+
+model Availability {
+  id          Int           @id @default(autoincrement())
+  dateTime    DateTime      @unique
+  isBooked    Boolean       @default(false)
+
+  // ✅ Обратная связь с `Appointment`
+  appointment Appointment?  
+
+  createdAt   DateTime      @default(now())
+}
+
+model BlogPost {
+  id          Int      @id @default(autoincrement())
+  title       String
+  content     String?
+  imageUrl    String?
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  isPublished Boolean  @default(false)
+}

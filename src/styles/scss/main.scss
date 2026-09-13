@@ -1,0 +1,105 @@
+@import 'variables';
+@import 'mixins';
+@import 'popup';
+@import 'header';
+@import 'service';
+@import 'top';
+@import 'testimonials';
+@import 'contact';
+@import 'footer';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.container {
+  overflow: hidden;
+  background-color: red($color: #000000);
+  max-width: 1192px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  @include respond(tablet) {
+    max-width: 1064px;
+  }
+
+  @include respond(995) {
+    max-width: 1000px;
+  }
+
+  @include respond(740) {
+    max-width: 800px;
+  }
+
+  @include respond(mobile) {
+    max-width: 360px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+}
+
+.overlay.active {
+  @include respond(740) {
+    opacity: 10;
+    visibility: visible;
+  }
+}
+
+body {
+  color: $primary-color;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 40px;
+
+  @include respond(740) {
+    font-size: 32px;
+  }
+}
+
+.subtext {
+  font-family: Roboto, sans-serif;
+  line-height: 1.3;
+  font-size: 20px;
+  font-weight: 300;
+}
