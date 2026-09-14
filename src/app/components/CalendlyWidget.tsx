@@ -4,7 +4,9 @@ import React from 'react';
 import { InlineWidget } from 'react-calendly';
 
 export default function CalendlyWidget() {
-  return (
+  // Чтобы вернуть виджет: удали return null; и раскомментируй код ниже
+  return null;
+  /*return (
     <section className="w-full py-10 bg-gray-50 flex flex-col items-center justify-center" id="booking">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
         Book Service
@@ -16,5 +18,5 @@ export default function CalendlyWidget() {
         />
       </div>
     </section>
-  );
+  );*/
 }
