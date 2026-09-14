@@ -1,6 +1,6 @@
 "use client"; 
 
-import CalendlyWidget from '@/app/components/CalendlyWidget';
+//import CalendlyWidget from '@/app/components/CalendlyWidget';
 import dynamic from "next/dynamic";
 import "../app/main.css";
 import { motion } from "framer-motion";
