@@ -7,7 +7,7 @@ export default function CalendlyWidget() {
   return (
     <section className="w-full py-10 bg-gray-50 flex flex-col items-center justify-center" id="booking">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-        Записаться на приём
+        Book Service
       </h2>
       <div className="w-full max-w-4xl min-h-[700px]">
         <InlineWidget 
