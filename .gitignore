@@ -33,6 +33,7 @@ out/
 # Конфигурационные файлы окружения
 .env                    # Переменные окружения
 .env.*                  # Переменные для разных сред (например, .env.production)
+.env*.local
 .secret                 # Секреты
 
 # Тестовые файлы
@@ -62,7 +63,7 @@ package-lock.json       # Если используете yarn/pnpm
 
 # CI/CD файлы
 .npmrc                  # Настройки npm
-# *.env.local
+*.env.local
 *.env.development.local
 *.env.production.local
 
