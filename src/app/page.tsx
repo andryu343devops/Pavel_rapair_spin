@@ -12,7 +12,7 @@ const HeroSection = dynamic(() => import("@/app/components/mainblock"), { ssr: f
 const Services = dynamic(() => import("@/app/components/services"), { ssr: false, loading: () => <LoadingComponent /> });
 const Blog = dynamic(() => import("./components/blog"), { ssr: false, loading: () => <LoadingComponent /> });
 const TestimonialsSection = dynamic(() => import("@/app/components/testimonials"), { ssr: false, loading: () => <LoadingComponent /> });
-//const ContactSection = dynamic(() => import("./components/contactSecton"), { ssr: false, loading: () => <LoadingComponent /> });
+const ContactSection = dynamic(() => import("./components/contactSecton"), { ssr: false, loading: () => <LoadingComponent /> });
 const Footer = dynamic(() => import("@/app/components/footer"), { ssr: false, loading: () => <LoadingComponent /> });
 
 const fadeInUp = {
@@ -78,8 +78,8 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <CalendlyWidget />
-        {/* <ContactSection /> */}
+        <ContactSection />
+        {/*<CalendlyWidget />  */}
       </main>
 
       <footer>

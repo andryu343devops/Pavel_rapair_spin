@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { InlineWidget } from 'react-calendly';
+// import React from 'react';
+// import { InlineWidget } from 'react-calendly';
 
 export default function CalendlyWidget() {
   // Чтобы вернуть виджет: удали return null; и раскомментируй код ниже
